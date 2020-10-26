@@ -1,0 +1,127 @@
+db proyectoSE
+
+use My_Own_Business
+db.createCollection("usuarios");
+db.createCollection("tiendas");
+db.createCollection("plantillas");
+db.createCollection("planes");
+
+
+-------------------------------------------------------------------
+usuarios atributos generales:
+_id
+nombres: string
+apellidos: string
+correo: string
+password: string
+fechaNacimiento: date
+icono: string
+tipo: string 
+
+*************************************
+atributos de usuario cliente:
+productosDeseados ->Arreglo de productos en carrito segun la tienda.
+[
+    {
+        tienda: string
+        idTienda:
+        idProducto:
+        producto: string 
+        precio: number, 
+    },
+]
+tiendasFavoritas ->arreglo de tiendas favoritas 
+[
+    {
+        idTienda:
+        tienda: string 
+    },
+]
+
+*********************************************
+atributos de usuario Empresa: 
+plantillas <- arreglo para almacenar las plantillas favoritas
+[
+    {
+        plantilla: string 
+        idPlantilla: 
+        CSS: <- codigo css almacenado como cadena de caracteres.
+        javascript: <-codigo javascript almacenado como cadena caracteres
+
+        imagenes: [ arrelostring con las URL.]
+    },
+]
+recursos <- arreglo donde el usuario subira todos los recursos necesarios
+[
+    {
+        idRecurso:
+        urlRecurso: string
+        tipoRecurso: string
+        codigohtmlRecurso: string
+            // <img>
+            // <video>
+        estilo:{
+            //parametros a llenar por recurso.
+        }        
+    }
+]
+plan <- atributo que brinda todos los permisos de acceso de usuario Empresa
+    {
+        idPlan:
+        nombrePlan: string
+        cantidadPaginas:number
+        cantidadProductos: number
+    }
+
+atributos de usuario Administrador:
+--- ni idea 
+
+
+---------------------------------------------------------------------
+plantilla atributos:
+_id: 
+tituloPlantilla: string
+autor: string
+css: string
+javascript: string
+imagenes: [ arrelostring con las URL.]
+plantillaPremium: booleano (0,1)
+---------------------------------------------------------------------
+planes atributos:
+_id:
+nombrePlan: string
+cantidadPaginas: number
+cantidadProductos: number
+publicidadPagina: (0,1)
+plantillasPremium: (0,1)
+
+---------------------------------------------------------------------
+tienda atributos: 
+_id:
+nombreTienda:
+paginas:
+[
+    {
+        numeroPagina
+        tipoPagina  
+        bloques:[ {
+            numeroBloque = number
+            tipoBloque = "string"
+            contenidoBloque= "string"
+         },
+         ]
+    },   
+]
+productos: 
+[
+    {   
+        id:
+        nombreProducto: 
+        Precio:
+        Descripcion:
+        tipo:
+    }
+]
+idUsuario: 
+nombre_usuario:
+
