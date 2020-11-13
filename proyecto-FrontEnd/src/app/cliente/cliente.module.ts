@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { ClienteRoutingModule } from './cliente-routing.module';
 import { VistaComponent } from './vista/vista.component';
+import { ShareModule } from '../share-module/share-module.module';
 
 
 @NgModule({
   declarations: [ VistaComponent],
   imports: [
     CommonModule,
-    ClienteRoutingModule
+    ClienteRoutingModule,
+    ShareModule
   ]
 })
 export class ClienteModule { }

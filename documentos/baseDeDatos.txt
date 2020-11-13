@@ -1,0 +1,7 @@
+use proyectoSE
+db.createCollection("usuarios");
+db.createCollection("tiendas");
+db.createCollection("plantillas");
+db.createCollection("planes");
+db.createCollection("categorias");
+

@@ -5,7 +5,9 @@ var cors = require('cors');
 //var testModule = require('./modules/test-module');
 var database = require('./modules/database'); 
 // conexion con la base de datos
-//var usuariosRouter = require('./routes/usuarios-router');
+var usuariosRouter = require('./routes/usuarios-router');
+var categoriasRouter = require('./routes/categorias-router');
+
 //var cancionesRouter = require('./routes/canciones-router');
 
 app.use(cors());// permita peticiones de otros origenes
@@ -13,7 +15,8 @@ app.use(bodyParser.json());
 //permite obtener el arrchivo json del metodo post
 app.use(bodyParser.urlencoded({extended:true}));
 // permite enviar informacion en formato urlencoded
-//app.use('/usuarios',usuariosRouter);
+app.use('/usuarios',usuariosRouter);
+app.use('/categorias',categoriasRouter);
 
 
 

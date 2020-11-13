@@ -1,0 +1,62 @@
+<!--categorias-->
+
+
+<div id="categorias" [ngClass]="{'visible':categoriasVisibles,
+                                'no-visible':!categoriasVisibles}">
+    <div   class="row px-4 py-5" style="background-color: #DC842B;">
+        <div class="col-12">
+            <h1 style="color: beige;">Categoria de Tiendas</h1>
+        </div>
+        <!--generar una categoria-->
+        <div  *ngFor="let categoria of categorias" class="col-lg-3 col-md-4 col-sm-6 mt-2"  >
+            <div class="card-item card" [style.backgroundColor]="categoria.color" (click)="mostrarTiendas(categoria)" >
+            <div class="row">
+                <div class="col mx-auto text-center m-3">
+                    <img [src]="categoria.img" style="width: 220px; height: 220px;" alt="">
+                </div>
+                
+            </div>
+            <div class="row m-3 mt-4">
+                <section class="col">
+                    <h3 class="text-white font-weight-bolder">{{categoria.nombreCategoria}}</h3>
+                    <p class="text-white" style="font-size: 13px;">
+                        Tiendas disponibles: {{categoria.tiendas.length}}
+                    </p>
+                </section>
+            </div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+<!-- Tiendas -->
+<div id="tiendas"  [ngClass]="{'visible':!categoriasVisibles,
+                            'no-visible':categoriasVisibles}">
+    <div  id="tiendas" class="row px-4 py-5" >
+        <div class="col-12">
+             <h1 style="color: beige;" ><fa-icon [icon]="faArrowLeft" (click)="mostrarCategorias()"></fa-icon> Division {{categoriaSeleccionada.nombreCategoria}}</h1>
+        </div>
+        <div *ngFor="let tienda of categoriaSeleccionada.tiendas" class="col-lg-2 col-md-3 col-sm-6 mt-2"  >
+            <div class="card-item card" [style.backgroundColor]="categoriaSeleccionada.color"  >
+                <div class="row">
+                    <div class="col mx-auto text-center m-3">
+                        <img [src]="tienda.logo" style="width: 180px; height: 160px;" alt="">
+                    </div>
+                    
+                </div>
+                <div class="row m-3 mt-4">
+                    <section class="col">
+                        <h5 class="text-white font-weight-bolder" style="color: black;">{{tienda.nombreTienda}}</h5>
+                        <p class="text-white" style="font-size: 13px;">
+                            cantidad de productos en venta
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>

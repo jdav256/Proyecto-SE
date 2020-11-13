@@ -1,10 +1,11 @@
 db proyectoSE
 
-use My_Own_Business
+use proyectoSE
 db.createCollection("usuarios");
 db.createCollection("tiendas");
 db.createCollection("plantillas");
 db.createCollection("planes");
+db.createCollection("categorias");
 
 
 -------------------------------------------------------------------
@@ -51,20 +52,7 @@ plantillas <- arreglo para almacenar las plantillas favoritas
         imagenes: [ arrelostring con las URL.]
     },
 ]
-recursos <- arreglo donde el usuario subira todos los recursos necesarios
-[
-    {
-        idRecurso:
-        urlRecurso: string
-        tipoRecurso: string
-        codigohtmlRecurso: string
-            // <img>
-            // <video>
-        estilo:{
-            //parametros a llenar por recurso.
-        }        
-    }
-]
+
 plan <- atributo que brinda todos los permisos de acceso de usuario Empresa
     {
         idPlan:
@@ -122,6 +110,32 @@ productos:
         tipo:
     }
 ]
-idUsuario: 
-nombre_usuario:
+recursos <- arreglo donde el usuario subira todos los recursos necesarios
+[
+    {
+        idRecurso:
+        urlRecurso: string
+        tipoRecurso: string
+        codigohtmlRecurso: string
+            // <img>
+            // <video>
+        estilo:{
+            //parametros a llenar por recurso.
+        }        
+    }
+]
+idAutor: 
 
+
+--------------------------------------------
+
+categorias
+
+_id:
+nombreCategoria: string
+color:
+img:string
+tiendas:[{_id:,
+        nombreTienda:
+        puntos:
+            }]

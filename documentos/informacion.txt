@@ -1,0 +1,185 @@
+db.usuarios.insertMany([
+   {
+      "nombre":"kevin",
+      "apellido":"martinez",
+      "email":"kevin256@hotmail.es",
+      "fechaNacimiento":"20/03/1997",
+      "password":"asd.123",
+      "tipo":"Cliente",
+      "productoDeseados":[],
+      "tiendasFavoritas":[],
+      "plantillas":[]
+   },
+   {
+      "nombre":"Danelya",
+      "apellido":"Romero",
+      "email":"danelya256@hotmail.es",
+      "fechaNacimiento":"08/05/1995",
+      "password":"asd.123",
+      "tipo":"Empresario",
+      "productoDeseados":[],
+      "tiendasFavoritas":[],
+      "plantillas":[]
+   },
+   {
+      "nombre":"Alessandro",
+      "apellido":"Aguilar",
+      "email":"alessandro256@hotmail.es",
+      "fechaNacimiento":"16/04/1996",
+      "password":"asd.123",
+      "tipo":"Empresario",
+      "productoDeseados":[],
+      "tiendasFavoritas":[],
+      "plantillas":[]
+   }
+]);
+
+
+db.categorias.insertMany([
+   {
+
+      "nombreCategoria":"Ropa", 
+      "color":"#7FA069",
+      "img":"../assets/img/categorias/ropa.png",
+      "tiendas":[]
+   },
+   {  
+      "nombreCategoria":"Tecnologia" ,
+      "color":"#2680EB",
+      "img":"../assets/img/categorias/tecnologia.png",
+      "tiendas":[]
+   },
+   {
+      "nombreCategoria":"Fitness" ,
+      "color":"#A9E00F",
+      "img":"../assets/img/categorias/fitness.png",
+      "tiendas":[
+         {
+            "_id":ObjectId("5fada63dd607962c00e49ced"),
+            "nombreTienda":"SportAdid",
+            "logo":"../assets/img/tiendas/SportAdid/logo.png"
+         },
+         {
+            "_id":ObjectId("5fada63dd607962c00e49cee"),
+            "nombreTienda":"TuAmigoElMamado",
+            "logo":"../assets/img/tiendas/TuAmigoElMamado/logo.png"
+
+         },
+         {
+            "_id":ObjectId("5fada63dd607962c00e49cef"),
+            "nombreTienda":"ZumbaCenter",
+            "logo":"../assets/img/tiendas/ZumbaCenter/logo.png"
+         },
+         {
+            "_id":ObjectId("5fada63dd607962c00e49cf0"),
+            "nombreTienda":"WolvesCenter",
+            "logo":"../assets/img/tiendas/WolvesCenter/logo.png"
+         }
+      ]
+   },
+   {
+      "nombreCategoria":"Hogar", 
+      "color":"#C18018",
+      "img":"../assets/img/categorias/hogar.png",
+      "tiendas":[]
+   },
+   {
+      "nombreCategoria":"Maquillaje", 
+      "color":"#1F9FB9",
+      "img":"../assets/img/categorias/maquillaje.png",
+      "tiendas":[]
+   },
+   {
+      "nombreCategoria":"Viberos", 
+      "color":"#009688",
+      "img":"../assets/img/categorias/plantas.png",
+      "tiendas":[{
+         "_id":ObjectId("5fada63dd607962c00e49cf1"),
+         "nombreTienda":"ElCafesitoJuan",
+         "logo":"../assets/img/tiendas/ElCafesitoJuan/logo.png"
+      }]
+   }
+]);
+
+db.tiendas.insertMany([
+   {
+      "nombreTienda":"SportAdid",
+      "paginas":[],
+      "productos":[],
+      "recursosEdicion":[],
+      "logo":"../assets/img/tiendas/SportAdid/logo.png",
+      "idEmpresario":ObjectId("5fa369024d8f6c1cd486af5d")
+   },
+   {
+      "nombreTienda":"TuAmigoElMamado", 
+      "paginas":[],
+      "productos":[],
+      "recursosEdicion":[],
+      "logo":"../assets/img/tiendas/TuAmigoElMamado/logo.png",
+      "idEmpresario":ObjectId("5fa369024d8f6c1cd486af5e")
+   },
+   {
+      "nombreTienda":"ZumbaCenter", 
+      "paginas":[],
+      "productos":[],
+      "recursosEdicion":[],
+      "logo":"../assets/img/tiendas/ZumbaCenter/logo.png",
+      "idEmpresario":ObjectId()
+   },
+   {
+      "nombreTienda":"WolvesCenter", 
+      "paginas":[],
+      "productos":[],
+      "recursosEdicion":[],
+      "logo":"../assets/img/tiendas/WolvesCenter/logo.png",
+      "idEmpresario":ObjectId()
+   },
+   {
+      "nombreTienda":"ElCafesitoJuan", 
+      "paginas":[],
+      "productos":[],
+      "recursosEdicion":[],
+      "logo":"../assets/img/tiendas/ElCafesitoJuan/logo.png",
+      "idEmpresario":ObjectId()
+   }
+
+]);
+
+
+{
+   "_id":ObjectId("5fada63dd607962c00e49ced"),
+   "nombreTienda":"SportAdid",
+   "logo":"../assets/img/tiendas/SportAdid/logo.png"
+},
+{
+   "_id":ObjectId("5fada63dd607962c00e49cee"),
+   "nombreTienda":"TuAmigoElMamado",
+   "logo":"../assets/img/tiendas/TuAmigoElMamado/logo.png"
+
+},
+{
+   "_id":ObjectId("5fada63dd607962c00e49cef"),
+   "nombreTienda":"ZumbaCenter",
+   "logo":"../assets/img/tiendas/ZumbaCenter/logo.png"
+},
+{
+   "_id":ObjectId("5fada63dd607962c00e49cf0"),
+   "nombreTienda":"WolvesCenter",
+   "logo":"../assets/img/tiendas/WolvesCenter/logo.png"
+},
+{
+   "_id":ObjectId("5fada63dd607962c00e49cf1"),
+   "nombreTienda":"ElCafesitoJuan",
+   "logo":"../assets/img/tiendas/ElCafesitoJuan/logo.png"
+},
+
+db.categorias.insertOne({
+      "nombreCategoria":"Viberos", 
+      "color":"#009688",
+      "img":"../assets/img/categorias/plantas.png",
+      "tiendas":[{
+         "_id":ObjectId("5fada63dd607962c00e49cf1"),
+         "nombreTienda":"ElCafesitoJuan",
+         "logo":"../assets/img/tiendas/ElCafesitoJuan/logo.png"
+      }]
+   });
